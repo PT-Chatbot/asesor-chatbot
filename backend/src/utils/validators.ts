@@ -17,7 +17,7 @@ export const validate = (validations: ValidationChain[]) => {
   };
 };
 
-export const validadorLogin = [
+export const loginValidator = [
   body("email")
     .trim()
     .isEmail()
@@ -28,11 +28,11 @@ export const validadorLogin = [
     .withMessage("La contraseña debe contener al menos 6 caracteres"),
 ];
 
-export const validadorRegistro = [
+export const signupValidator = [
   body("name").notEmpty().withMessage("El nombre es requerido"),
-  ...validadorLogin,
+  ...loginValidator,
 ];
 
-export const validadorCompletarChat = [
+export const chatCompletionValidator = [
   body("message").notEmpty().withMessage("El mensaje es requerido"),
 ];
